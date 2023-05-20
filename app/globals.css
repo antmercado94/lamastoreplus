@@ -2,26 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+
+.slick-arrow:before {
+	color: red;
+}
+.slick-slide > div {
+	@apply mx-4 sm:mx-8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+	font-size: 0.8rem;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media (min-width: 1600px) {
+	html {
+		font-size: 1rem;
+	}
+}
+
+/* override tailwind mui style conflicts */
+button[class*='MuiButton-contained'] {
+	background-color: #3482f6 !important;
+}
+button[class*='MuiButton-contained']:hover {
+	background-color: #1565c0 !important;
 }
