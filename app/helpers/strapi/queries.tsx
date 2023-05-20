@@ -24,7 +24,7 @@ export const strapiQueries = {
 	allProducts: '/products',
 
 	searchProducts: (query: string) =>
-		`/products?populate=*&filters[title][$contains]=${query}`,
+		`/products?populate=*&filters[title][$containsi]=${query}`,
 
 	searchProductsFull: (
 		query: string,
