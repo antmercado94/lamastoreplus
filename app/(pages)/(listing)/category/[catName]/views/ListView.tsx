@@ -8,9 +8,12 @@ import List from '../../../(components)/List';
 import ToggleSidebarView from '../../../(components)/ToggleSidebarView';
 import SidebarView from './SidebarView';
 import ErrorFallback from '@/app/components/ErrorFallback';
+import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 const ListView = ({ catName }: { catName: string }) => {
 	const { selected, maxPrice, sort } = useStore();
+	const pathname = usePathname();
 
 	const catProdsQueryKey = ['catProds', catName, selected, maxPrice, sort];
 	const httpQuery = strapiQueries.categoryProducts(
@@ -19,6 +22,11 @@ const ListView = ({ catName }: { catName: string }) => {
 		selected,
 		sort
 	);
+
+	useEffect(() => {
+		// sticky sidebar scroll issue - dirty fix
+		window.scrollTo(0, 0);
+	}, [pathname]);
 
 	return (
 		<div className='flex-[3]'>
