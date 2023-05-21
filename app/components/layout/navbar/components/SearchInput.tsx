@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import { revalidatePath } from 'next/cache';
+import { LoadingSpinner } from '@/app/components/loading';
 
 const Search = styled('div')(({ theme }) => ({
 	position: 'relative',
@@ -49,11 +49,18 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const SearchInput = () => {
 	const [searchQuery, setSearchQuery] = useState<string>('');
+	const [loading, setLoading] = useState<boolean>(false);
 	const router = useRouter();
+	const searchParams = useSearchParams();
+
+	useEffect(() => {
+		setLoading(false);
+	}, [searchParams]);
 
 	const onSearch = (e: React.FormEvent) => {
 		e.preventDefault();
 		if (!searchQuery) return;
+		setLoading(true);
 
 		// encode search string into valid url string
 		const encodedSearchQuery = encodeURI(searchQuery);
@@ -66,7 +73,7 @@ const SearchInput = () => {
 		<form onSubmit={onSearch}>
 			<Search>
 				<SearchIconWrapper>
-					<SearchIcon />
+					{loading ? <LoadingSpinner size={12} /> : <SearchIcon />}
 				</SearchIconWrapper>
 				<StyledInputBase
 					placeholder='Search…'
