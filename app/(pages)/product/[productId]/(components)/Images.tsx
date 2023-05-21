@@ -19,6 +19,10 @@ const Images = ({ imgData }: Props) => {
 
 	const [selectedImg, setSelectedImg] = useState<string>('img1');
 
+	const image1 =
+		process.env.NEXT_PUBLIC_UPLOAD_URL + img1?.data?.attributes?.url;
+	const image2 =
+		process.env.NEXT_PUBLIC_UPLOAD_URL + img2?.data?.attributes?.url;
 	const currentImage =
 		process.env.NEXT_PUBLIC_UPLOAD_URL +
 		(selectedImg === 'img1'
@@ -29,19 +33,17 @@ const Images = ({ imgData }: Props) => {
 		<div className='flex flex-1 flex-col-reverse gap-5 sm:flex-row muiMd:flex-col-reverse lg:flex-row'>
 			<div className='flex flex-1 gap-4 sm:flex-col sm:gap-0 muiMd:flex-row muiMd:gap-4 lg:flex-col lg:gap-0'>
 				<Image
-					src={process.env.NEXT_PUBLIC_UPLOAD_URL + img1?.data?.attributes?.url}
-					width={1000}
-					height={1000}
-					priority={true}
+					src={image1}
+					width={600}
+					height={600}
 					alt='Product Image #1'
 					onClick={() => setSelectedImg('img1')}
 					className='mb-[10px] max-h-[32vh] min-h-[180px] w-full cursor-pointer object-cover sm:max-h-0 sm:min-h-[150px] muiMd:min-h-[250px] lg:max-h-0 lg:min-h-[150px]'
 				/>
 				<Image
-					src={process.env.NEXT_PUBLIC_UPLOAD_URL + img2?.data?.attributes?.url}
-					width={1000}
-					height={1000}
-					priority={true}
+					src={image2}
+					width={600}
+					height={600}
 					alt='Product Image #2'
 					onClick={() => setSelectedImg('img2')}
 					className='mb-[10px] max-h-[32vh] min-h-[180px] w-full cursor-pointer object-cover sm:max-h-0 sm:min-h-[150px] muiMd:min-h-[250px] lg:max-h-0 lg:min-h-[150px]'
