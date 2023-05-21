@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import Slider from '@mui/material/Slider';
 
 // slider marks
@@ -36,20 +36,15 @@ const PriceSlider = ({ min, max, store }: Props) => {
 	let maxPriceTimeout: NodeJS.Timeout | null = null;
 	let timeoutTime = 500;
 
-	const clearSliderTimeout = useCallback(
-		() => maxPriceTimeout && clearTimeout(maxPriceTimeout),
-		[maxPriceTimeout]
-	);
-
 	const maxPrice = useMemo(() => store.maxPrice, []);
 
 	useEffect(() => {
 		// cleanup
 		return () => {
-			clearSliderTimeout();
+			maxPriceTimeout && clearTimeout(maxPriceTimeout);
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [store.maxPrice, clearSliderTimeout]);
+	}, [store.maxPrice]);
 
 	const handleChange = (value: number) => {
 		maxPriceTimeout = setTimeout(() => {
