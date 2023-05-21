@@ -1,17 +1,28 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
 	return (
-		<div className='mb-5 mt-24 px-8 2xl:mx-52 2xl:px-0'>
+		<div className='mb-5 mt-24 px-8 md:mx-8 xl:mx-48 xl:px-0'>
 			{/* top */}
 			<div className='flex flex-wrap gap-12 md:flex-row md:flex-nowrap '>
 				<div className='flex flex-1 flex-col gap-2 text-justify text-sm'>
 					<h1 className='text-bold text-lg text-gray-600'>Categories</h1>
-					<span className='text-gray-500'>Women</span>
-					<span className='text-gray-500'>Men</span>
-					<span className='text-gray-500'>Shoes</span>
-					<span className='text-gray-500'>Accessories</span>
-					<span className='text-gray-500'>New Arrivals</span>
+					<Link href={'/category/women'} className='text-gray-500'>
+						Women
+					</Link>
+					<Link href={'/category/men'} className='text-gray-500'>
+						Men
+					</Link>
+					<Link href={'/category/shoes'} className='text-gray-500'>
+						Shoes
+					</Link>
+					<Link href={'/category/accessories'} className='text-gray-500'>
+						Accessories
+					</Link>
+					<Link href={'/category/new'} className='text-gray-500'>
+						New Arrivals
+					</Link>
 				</div>
 				<div className='flex flex-1 flex-col gap-2 text-justify text-sm'>
 					<h1 className='text-bold text-lg text-gray-600'>Links</h1>
