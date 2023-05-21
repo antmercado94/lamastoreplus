@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import { revalidatePath } from 'next/cache';
 
 const Search = styled('div')(({ theme }) => ({
 	position: 'relative',
@@ -52,13 +53,13 @@ const SearchInput = () => {
 
 	const onSearch = (e: React.FormEvent) => {
 		e.preventDefault();
+		if (!searchQuery) return;
 
 		// encode search string into valid url string
 		const encodedSearchQuery = encodeURI(searchQuery);
 
 		router.push(`/search?q=${encodedSearchQuery}`);
-
-		console.log('current query', encodedSearchQuery);
+		router.refresh(); // force update on search
 	};
 
 	return (

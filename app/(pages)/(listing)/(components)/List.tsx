@@ -69,6 +69,13 @@ const List = ({
 			</div>
 		);
 
+	if (!products?.pages[0].data.length)
+		return (
+			<div className='p-24 text-center text-xl font-semibold'>
+				No Products Found!
+			</div>
+		);
+
 	return (
 		<>
 			<div className='grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-4 md:grid-cols-4 md:gap-8 muiMd:grid-cols-3 lg:grid-cols-4'>
@@ -83,7 +90,7 @@ const List = ({
 				})}
 			</div>
 			{isFetching && !isFetchingNextPage && (
-				<div className='flex items-center justify-center'>
+				<div className='flex items-center justify-center p-24'>
 					<LoadingSpinner size={20} />
 				</div>
 			)}
