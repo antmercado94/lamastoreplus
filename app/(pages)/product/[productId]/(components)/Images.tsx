@@ -19,6 +19,12 @@ const Images = ({ imgData }: Props) => {
 
 	const [selectedImg, setSelectedImg] = useState<string>('img1');
 
+	const currentImage =
+		process.env.NEXT_PUBLIC_UPLOAD_URL +
+		(selectedImg === 'img1'
+			? img1?.data?.attributes?.url
+			: img2?.data?.attributes?.url);
+
 	return (
 		<div className='flex flex-1 flex-col-reverse gap-5 sm:flex-row muiMd:flex-col-reverse lg:flex-row'>
 			<div className='flex flex-1 gap-4 sm:flex-col sm:gap-0 muiMd:flex-row muiMd:gap-4 lg:flex-col lg:gap-0'>
@@ -46,17 +52,7 @@ const Images = ({ imgData }: Props) => {
 				<Image
 					width={600}
 					height={600}
-					src={`
-						${
-							process.env.NEXT_PUBLIC_UPLOAD_URL +
-							`${
-								selectedImg === 'img1'
-									? img1?.data?.attributes?.url
-									: img2?.data?.attributes?.url
-							}
-						`
-						}
-					`}
+					src={currentImage}
 					alt=''
 					className='max-h-[800px] w-full object-cover'
 				/>
