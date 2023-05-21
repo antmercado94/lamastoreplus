@@ -4,7 +4,7 @@ import Slider from '@/components/Slider';
 import FeaturedProducts from '@/components/Featured';
 import Categories from '@/components/Categories';
 import Contact from '@/components/contact/Contact';
-import { useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 import useCartStore from './(store)/cartStore';
 import { useSearchParams } from 'next/navigation';
 
@@ -14,14 +14,13 @@ const HomeView = () => {
 
 	const success = searchParams.get('success');
 
-	const clearCart = useCallback(() => resetCart(), [resetCart]);
-
 	// reset cart after stripe payment
 	useEffect(() => {
 		if (success === 'true') {
-			clearCart();
+			resetCart();
 		}
-	}, [success, clearCart]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [success]);
 
 	return (
 		<>
