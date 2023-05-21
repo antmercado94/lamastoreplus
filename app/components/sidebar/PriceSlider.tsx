@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo } from 'react';
+import { useEffect, useRef } from 'react';
 import Slider from '@mui/material/Slider';
 
 // slider marks
@@ -35,8 +35,7 @@ type Props = {
 const PriceSlider = ({ min, max, store }: Props) => {
 	let maxPriceTimeout: NodeJS.Timeout | null = null;
 	let timeoutTime = 500;
-
-	const maxPrice = useMemo(() => store.maxPrice, []);
+	const maxPrice = useRef<number>(store.maxPrice);
 
 	useEffect(() => {
 		// cleanup
@@ -61,7 +60,7 @@ const PriceSlider = ({ min, max, store }: Props) => {
 			<h2 className='mb-5 text-2xl'>Filter by price</h2>
 			<Slider
 				aria-label='Custom marks'
-				defaultValue={maxPrice}
+				defaultValue={maxPrice.current}
 				getAriaValueText={valuetext}
 				step={10}
 				valueLabelDisplay='auto'
