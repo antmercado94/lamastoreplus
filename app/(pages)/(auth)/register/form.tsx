@@ -56,15 +56,34 @@ const RegisterForm = () => {
 			setLoading(true);
 			const { email, password } = data;
 
+			// get username from email, add rand string for duplicates
+			// https://gist.github.com/6174/6062387
+			const username =
+				email.substring(0, email.indexOf('@')) +
+				Math.random().toString(36).substring(2, 15) +
+				Math.random().toString(36).substring(2, 15);
+
+			const emailQuery = `/users?filters[$and][0][email][$eq]=${email}`;
+
+			// check for existing user by query
+			// temp fix -- not able to receive correct error response from strapi api
+			const existingUser = await publicApi.get(emailQuery);
+
+			if (existingUser.length) {
+				setError('That email already exists');
+				setLoading(false);
+				return;
+			}
+
 			// create user
 			const { user } = await publicApi.post(strapiQueries.register, {
-				username: email.substring(0, email.indexOf('@')), // get username from email
+				username,
 				email,
 				password,
 			});
 
 			if (!user) {
-				setError('Could not create user');
+				setError('Could not create user, please try again');
 				setLoading(false);
 				return;
 			}
