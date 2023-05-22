@@ -6,6 +6,7 @@ import Radio from '@mui/material/Radio';
 
 type Props = {
 	store: {
+		sort: string;
 		setSort: (sort: string) => void;
 	};
 };
@@ -23,11 +24,13 @@ const Sort = ({ store }: Props) => {
 					value='asc'
 					control={<Radio onChange={(e) => store.setSort('asc')} />}
 					label='Price (Lowest First)'
+					checked={store.sort === 'asc'}
 				/>
 				<FormControlLabel
 					value='desc'
 					control={<Radio onChange={(e) => store.setSort('desc')} />}
 					label='Price (Highest First)'
+					checked={store.sort === 'desc'}
 				/>
 			</RadioGroup>
 		</div>

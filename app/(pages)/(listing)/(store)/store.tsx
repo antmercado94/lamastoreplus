@@ -7,11 +7,14 @@ interface CategoryState {
 	setSelected: (selected: string[]) => void;
 	setMaxPrice: (price: number) => void;
 	setSort: (option: string) => void;
+	resetFilters: () => void;
 }
+
+const defaultMaxPrice = 120; // max price of price filter slider
 
 const useStore = create<CategoryState>((set, get) => ({
 	selected: [],
-	maxPrice: 120,
+	maxPrice: defaultMaxPrice,
 	sort: '',
 	setSelected: (selected) => {
 		set((state) => {
@@ -34,6 +37,16 @@ const useStore = create<CategoryState>((set, get) => ({
 			return {
 				...state,
 				sort: option,
+			};
+		});
+	},
+	resetFilters: () => {
+		set((state) => {
+			return {
+				...state,
+				selected: [],
+				maxPrice: defaultMaxPrice,
+				sort: '',
 			};
 		});
 	},

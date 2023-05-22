@@ -1,13 +1,21 @@
 'use client';
 
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
 import { Divider } from '@mui/material';
 import Icons from '@/app/components/icons';
+import useStore from '../(store)/store';
 
 const ToggleSidebarView = ({ children }: { children: React.ReactNode }) => {
 	const [state, setState] = useState<boolean>(false);
+	const { resetFilters } = useStore();
+	const pathname = usePathname();
+
+	useEffect(() => {
+		resetFilters();
+	}, [pathname]);
 
 	const toggleDrawer =
 		(open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {

@@ -34,6 +34,7 @@ const Categories = ({ categories, store }: Props) => {
 						<Checkbox
 							id={`${item.id}`}
 							value={item.id}
+							checked={!!store.selected.find((el) => el === item.id.toString())}
 							onChange={handleChange}
 						/>
 					}

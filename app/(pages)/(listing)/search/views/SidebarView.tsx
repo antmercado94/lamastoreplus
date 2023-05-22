@@ -16,7 +16,8 @@ const SidebarView = ({ isMobile = false }: { isMobile?: boolean }) => {
 		queryFn: () => publicApi.get(strapiQueries.allCategories),
 	});
 
-	const { selected, setSelected, maxPrice, setMaxPrice, setSort } = useStore();
+	const { selected, setSelected, maxPrice, setMaxPrice, sort, setSort } =
+		useStore();
 
 	const sidebarComponents = () => (
 		<>
@@ -25,7 +26,7 @@ const SidebarView = ({ isMobile = false }: { isMobile?: boolean }) => {
 				store={{ selected, setSelected }}
 			/>
 			<PriceSlider min={0} max={120} store={{ maxPrice, setMaxPrice }} />
-			<Sort store={{ setSort }} />
+			<Sort store={{ sort, setSort }} />
 		</>
 	);
 
