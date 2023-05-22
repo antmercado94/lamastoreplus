@@ -55,6 +55,7 @@ const MobileNavMenu = ({ pages }: { pages: string[] }) => {
 						key={page}
 						component={Link}
 						href={`/category/${page.toLowerCase()}`}
+						onClick={handleCloseNavMenu}
 					>
 						<Typography textAlign='center'>{page}</Typography>
 					</MenuItem>

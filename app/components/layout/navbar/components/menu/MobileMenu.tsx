@@ -38,7 +38,11 @@ const MobileMenu = ({
 		>
 			<AccountBtn isUser={isUser} isMobile={true} menuId={mobileMenuId} />
 			<WishListBtn isMobile={true} />
-			<CartDrawer isMobile={true} isUser={isUser} />
+			<CartDrawer
+				isMobile={true}
+				isUser={isUser}
+				handleMobileMenuClose={handleMobileMenuClose}
+			/>
 		</Menu>
 	);
 };

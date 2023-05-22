@@ -14,9 +14,11 @@ import CartItems from './cart/CartItems';
 const CartBtn = ({
 	isMobile,
 	isUser,
+	handleMobileMenuClose,
 }: {
 	isMobile: boolean;
 	isUser: boolean;
+	handleMobileMenuClose: () => void;
 }) => {
 	const [state, setState] = useState<boolean>(false);
 	const products = useGetFromStore(useCartStore, (state) => state.products);
@@ -31,6 +33,7 @@ const CartBtn = ({
 				return;
 			}
 			setState(open);
+			isMobile && handleMobileMenuClose();
 		};
 
 	const list = () => (
