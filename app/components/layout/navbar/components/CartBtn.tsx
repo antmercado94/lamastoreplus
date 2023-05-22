@@ -18,7 +18,7 @@ const CartBtn = ({
 }: {
 	isMobile: boolean;
 	isUser: boolean;
-	handleMobileMenuClose: () => void;
+	handleMobileMenuClose?: () => void;
 }) => {
 	const [state, setState] = useState<boolean>(false);
 	const products = useGetFromStore(useCartStore, (state) => state.products);
@@ -33,7 +33,7 @@ const CartBtn = ({
 				return;
 			}
 			setState(open);
-			isMobile && handleMobileMenuClose();
+			isMobile && handleMobileMenuClose && handleMobileMenuClose();
 		};
 
 	const list = () => (
