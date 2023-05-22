@@ -21,6 +21,7 @@ export default function Card({ item }: { item: ProductAll }) {
 						src={process.env.NEXT_PUBLIC_UPLOAD_URL + img1?.url}
 						alt={img1?.name}
 						className='absolute z-10 h-full w-full object-cover'
+						loading='eager'
 					/>
 					{/* alt image */}
 					{attributes.img2 && (
