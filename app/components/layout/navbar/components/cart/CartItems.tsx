@@ -77,7 +77,7 @@ const CartItems = ({
 	return (
 		<div className='flex h-full flex-col bg-white'>
 			<div className=' relative flex-grow overflow-hidden'>
-				<div className='absolute bottom-0 left-0 right-[-20px] top-0 overflow-y-scroll p-4 sm:p-8'>
+				<div className='absolute bottom-0 left-0 right-[-20px] top-0 overflow-y-scroll px-8 py-6 sm:p-8'>
 					<div className='mb-7 flex items-center justify-between'>
 						<h1 className='text-2xl text-gray-500'>Shopping Cart</h1>
 						<span className='cursor-pointer' onClick={toggleDrawer(false)}>
