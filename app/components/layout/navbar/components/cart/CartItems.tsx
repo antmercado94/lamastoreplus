@@ -145,7 +145,7 @@ const CartItems = ({
 								padding: '0.75rem',
 								borderRadius: '0',
 								fontSize: '1rem',
-								fontWeight: '400',
+								fontWeight: '600',
 							}}
 							disableElevation
 							onClick={handlePayment}

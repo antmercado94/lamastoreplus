@@ -54,6 +54,7 @@ const SignInWithProvider = ({ provider, icon }: Props) => {
 					borderRadius: '0',
 					fontSize: '1rem',
 					textTransform: 'none',
+					fontWeight: '400',
 				}}
 				onClick={handleClick}
 			>

@@ -141,6 +141,7 @@ const RegisterForm = () => {
 						borderRadius: '0',
 						fontSize: '1rem',
 						textTransform: 'capitalize',
+						fontWeight: '600',
 					}}
 					disableElevation
 					type='submit'
