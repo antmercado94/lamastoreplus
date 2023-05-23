@@ -38,7 +38,7 @@ const Images = ({ imgData }: Props) => {
 					height={600}
 					alt='Product Image #1'
 					onClick={() => setSelectedImg('img1')}
-					className='mb-[10px] max-h-[32vh] min-h-[180px] w-full cursor-pointer object-cover sm:max-h-0 sm:min-h-[150px] muiMd:min-h-[250px] lg:max-h-0 lg:min-h-[150px]'
+					className='mb-[10px] max-h-[32vh] min-h-[180px] w-1/2 cursor-pointer object-cover sm:max-h-0 sm:min-h-[150px] sm:w-full muiMd:min-h-[250px] lg:max-h-0 lg:min-h-[150px]'
 				/>
 				<Image
 					src={image2}
@@ -46,7 +46,7 @@ const Images = ({ imgData }: Props) => {
 					height={600}
 					alt='Product Image #2'
 					onClick={() => setSelectedImg('img2')}
-					className='mb-[10px] max-h-[32vh] min-h-[180px] w-full cursor-pointer object-cover sm:max-h-0 sm:min-h-[150px] muiMd:min-h-[250px] lg:max-h-0 lg:min-h-[150px]'
+					className='mb-[10px] max-h-[32vh] min-h-[180px] w-1/2 cursor-pointer object-cover sm:max-h-0 sm:min-h-[150px] sm:w-full muiMd:min-h-[250px] lg:max-h-0 lg:min-h-[150px]'
 				/>
 			</div>
 			{/* main image */}
