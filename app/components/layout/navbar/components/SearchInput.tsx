@@ -73,7 +73,7 @@ const SearchInput = () => {
 		<form onSubmit={onSearch}>
 			<Search>
 				<SearchIconWrapper>
-					{loading ? <LoadingSpinner size={12} /> : <SearchIcon />}
+					{loading ? <LoadingSpinner size={1.6} /> : <SearchIcon />}
 				</SearchIconWrapper>
 				<StyledInputBase
 					placeholder='Search…'

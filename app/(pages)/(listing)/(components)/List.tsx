@@ -65,7 +65,7 @@ const List = ({
 	if (isLoading)
 		return (
 			<div className='flex items-center justify-center'>
-				<LoadingSpinner />
+				<LoadingSpinner size={2} />
 			</div>
 		);
 
@@ -91,7 +91,7 @@ const List = ({
 			</div>
 			{isFetching && !isFetchingNextPage && (
 				<div className='flex items-center justify-center p-24'>
-					<LoadingSpinner size={20} />
+					<LoadingSpinner size={2} />
 				</div>
 			)}
 		</>

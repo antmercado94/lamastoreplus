@@ -145,7 +145,7 @@ const RegisterForm = () => {
 					disableElevation
 					type='submit'
 				>
-					{loading ? <LoadingSpinner size={28} /> : 'Register'}
+					{loading ? <LoadingSpinner /> : 'Register'}
 				</Button>
 			</div>
 		</form>

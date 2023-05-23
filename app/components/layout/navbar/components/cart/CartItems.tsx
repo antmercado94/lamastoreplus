@@ -145,11 +145,12 @@ const CartItems = ({
 								padding: '0.75rem',
 								borderRadius: '0',
 								fontSize: '1rem',
+								fontWeight: '400',
 							}}
 							disableElevation
 							onClick={handlePayment}
 						>
-							{loading ? <LoadingSpinner size={28} /> : 'PROCEED TO CHECKOUT'}
+							{loading ? <LoadingSpinner /> : 'PROCEED TO CHECKOUT'}
 						</Button>
 						<Snackbar
 							anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}

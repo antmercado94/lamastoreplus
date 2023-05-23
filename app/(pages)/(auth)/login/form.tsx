@@ -104,7 +104,7 @@ const LoginForm = () => {
 					disableElevation
 					type='submit'
 				>
-					{loading ? <LoadingSpinner size={28} /> : 'login'}
+					{loading ? <LoadingSpinner /> : 'login'}
 				</Button>
 
 				<div className='flex items-center'>

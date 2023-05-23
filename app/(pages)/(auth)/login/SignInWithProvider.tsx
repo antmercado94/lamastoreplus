@@ -58,7 +58,7 @@ const SignInWithProvider = ({ provider, icon }: Props) => {
 				onClick={handleClick}
 			>
 				{isLoading ? (
-					<LoadingSpinner size={28} />
+					<LoadingSpinner />
 				) : (
 					`Sign In with ${provider.charAt(0).toUpperCase() + provider.slice(1)}`
 				)}
