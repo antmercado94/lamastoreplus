@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **Lamastore+**
 
-## Getting Started
+A retooling/extension of the [Lamastore](https://github.com/safak/youtube2022/tree/ecommerce) ecommerce project using [Next.js](https://nextjs.org/) 13 and [Tailwind CSS](https://tailwindcss.com/). Created by [Lama Dev](https://www.youtube.com/@LamaDev/featured); the video tutorial for the original React project can be found [here](https://www.youtube.com/watch?v=BCkWFblNLKU).
 
-First, run the development server:
+- [Description](#description)
+- [Requirements](#requirements)
+  - [Environment Variables](#environment-variables)
+- [Installation and setup](#installation-and-setup)
+  - [Install](#install)
+  - [Development](#development)
+  - [Production](#production)
+- [License](#license)
+
+## **Description**
+
+This project makes use of newer Next.js features such as the `/app` directory, layouts, and server components.
+
+For content management, a [Strapi](https://strapi.io/) backend is used for the purposes of storing product, user, and order data. The CMS also serves as an API for providing auth tokens and making Stripe related requests. The repo containing the Strapi API for this project can be found here [here]().
+
+[NextAuth.js](https://next-auth.js.org/) is used to provide authentication between the Strapi backend and the client, which will enable authenticated users to make purchases or manage their orders through [Stripe](https://stripe.com/).
+
+A bit more detail about the development of this project can be found at my website, [here]().
+
+## **Requirements**
+
+### **Environment Variables**
+
+A number of API and NextAuth related env variables must be set in order for this project to start. Use the provided [`.env.example`]() file to view all necessary vars and how to provide them.
+
+## **Installation and setup**
+
+### **Install**
+
+- [Download zip](https://github.com/antmercado94/lamastoreplus/archive/refs/heads/main.zip) or clone: `git clone https://github.com/antmercado94/lamastoreplus.git`
+- Install dependencies using a package manager, e.g., npm: `npm install`
+
+### **Development**
+
+Run a development server using the `dev` script command:
 
 ```bash
+#npm:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **Production**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Information regarding how to deploy a Next.js application can be found on the Next.js [Docs](https://nextjs.org/docs/pages/building-your-application/deploying).
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+## **License**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Code released under [the MIT license](https://github.com/antmercado94/lamastoreplus/blob/main/LICENSE).
