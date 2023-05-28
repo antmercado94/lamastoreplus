@@ -15,17 +15,17 @@ A retooling/extension of the [Lamastore](https://github.com/safak/youtube2022/tr
 
 This project makes use of newer Next.js features such as the `/app` directory, layouts, and server components.
 
-For content management, a [Strapi](https://strapi.io/) backend is used for the purposes of storing product, user, and order data. The CMS also serves as an API for providing auth tokens and making Stripe related requests. The repo containing the Strapi API for this project can be found here [here]().
+For content management, a [Strapi](https://strapi.io/) backend is used for the purposes of storing product, user, and order data. The CMS also serves as an API for providing auth tokens and making Stripe related requests. The repo containing the Strapi API for this project can be found here [here](https://github.com/antmercado94/lamastoreplus-api).
 
 [NextAuth.js](https://next-auth.js.org/) is used to provide authentication between the Strapi backend and the client, which will enable authenticated users to make purchases or manage their orders through [Stripe](https://stripe.com/).
 
-A bit more detail about the development of this project can be found at my website, [here]().
+A bit more detail about the development of this project can be found at my website, [here](https://antoniomercado.netlify.app/blog/?post=lamastoreplus&id=e85ca83d-005b-5a70-91b2-710a05c48174/).
 
 ## **Requirements**
 
 ### **Environment Variables**
 
-A number of API and NextAuth related env variables must be set in order for this project to start. Use the provided [`.env.example`]() file to view all necessary vars and how to provide them.
+A number of API and NextAuth related env variables must be set in order for this project to start. Use the provided [`.env.example`](https://github.com/antmercado94/lamastoreplus/blob/main/.env.example) file to view all necessary vars and how to provide them.
 
 ## **Installation and setup**
 
