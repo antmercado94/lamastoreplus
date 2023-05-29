@@ -19,7 +19,7 @@ For content management, a [Strapi](https://strapi.io/) backend is used for the p
 
 [NextAuth.js](https://next-auth.js.org/) is used to provide authentication between the Strapi backend and the client, which will enable authenticated users to make purchases or manage their orders through [Stripe](https://stripe.com/).
 
-A bit more detail about the development of this project can be found at my website, [here](https://antoniomercado.netlify.app/blog/?post=lamastoreplus&id=e85ca83d-005b-5a70-91b2-710a05c48174/).
+A bit more detail about the development of this project can be found at my website, [here](https://amdev.work/blog/?post=lamastoreplus&id=e85ca83d-005b-5a70-91b2-710a05c48174/).
 
 ## **Requirements**
 
